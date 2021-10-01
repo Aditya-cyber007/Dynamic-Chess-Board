@@ -12,7 +12,7 @@ for ($r=1;$r<=$value;$r++)
     for ($c=1;$c<=$value;$c++){
         $a=$r+$c;
         if ($a%2==0){
-            echo"<td style='background-color:black;border:1px solid black; width:60px;height:60px'></td>";
+            echo"<td style='background-color:black;border:1px solid black; width:65px;height:60px'></td>";
             }
         else{
             echo"<td></td>";
