@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content=
+		"width=device-width,
+		initial-scale=1.0" />
+
+	<title>Digital Clock</title>
+
+	<style>
+		#clock {
+			font-size: 125px;
+			width: 600px;
+			margin: auto;
+			margin-top: 200px;
+			text-align: center;
+			border-radius: 103px;
+			padding-top: 20px;
+  			padding-right: 60px;
+  			padding-bottom: 20px;
+  			padding-left: 40px;
+		}
+		#clock:hover:hover  {
+  			background-color: #a74caf; /* Green */
+  			color: rgb(245, 164, 164);
+		}	
+		#clock{
+			transition-duration: 0.4;
+		}
+	</style>
+</head>
+
+<body>
+	<style>
+	body {
+		background-image: url('./space-image.jfif');
+		background-attachment: local;
+		background-size: 20%;
+	  }
+	  </style>
+	<div id="clock">8:10:45</div>
+
+	<script>
+		setInterval(showTime, 1000);
+		function showTime() {
+			let time = new Date();
+			let hour = time.getHours();
+			let min = time.getMinutes();
+			let sec = time.getSeconds();
+			am_pm = "AM";
+
+			if (hour > 12) {
+				hour -= 12;
+				am_pm = "PM";
+			}
+			if (hour == 0) {
+				hr = 12;
+				am_pm = "AM";
+			}
+
+			hour = hour < 10 ? "0" + hour : hour;
+			min = min < 10 ? "0" + min : min;
+			sec = sec < 10 ? "0" + sec : sec;
+
+			let currentTime = hour + ":"+ min + ":" + sec + am_pm;
+
+			document.getElementById("clock").innerHTML = currentTime;
+		}
+
+		showTime();
+	</script>
+</body>
+
+</html>
